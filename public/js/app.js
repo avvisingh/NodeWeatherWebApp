@@ -8,7 +8,7 @@ weatherForm.addEventListener('submit', (e) => {
     e.preventDefault() //preventDefault, here, is going to prevent the page automatically refreshing after eah time we click 'submit'
 
     const location = encodeURIComponent(search.value);
-    const queryURL = 'http://localhost:3000/weather?address=' + location;
+    const queryURL = '/weather?address=' + location;
 
     messageOne.textContent = 'Loading...';
     messageTwo.textContent = '';

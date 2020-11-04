@@ -10,6 +10,7 @@ const { setMaxListeners } = require('process');
 const app = express(); //Express library returns a single function which, as we've done here, we need to call to create a new express application.
 //The express function doesn't take in any arguments. Instead, we configure our server using various methods provided on the application itself.
 
+const port = process.env.PORT || 3000; //PORT is provided by Heroku. We use '||' as a fallback incase we want to run locally.
 //Define paths for express config
 const publicDirectoryPath = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname, '../templates/views');
@@ -112,6 +113,6 @@ app.get('*', (req, res) => {
     })
 });
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000'); //This message will never display to someone in the browser
+app.listen(port, () => {
+    console.log('Server is up on port ' + port); //This message will never display to someone in the browser
 })
