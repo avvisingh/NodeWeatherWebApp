@@ -12,7 +12,9 @@ const forecast = (latitude, longitude, callback) => {
             callback(undefined, {
                 description: body.current.weather_descriptions[0],
                 currentTemperature: body.current.temperature,
-                currentFeelsLike: body.current.feelslike
+                currentFeelsLike: body.current.feelslike,
+                windSpeed: body.current.wind_speed,
+                windDirection: body.current.wind_dir
             });
         }
     });

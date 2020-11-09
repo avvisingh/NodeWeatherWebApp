@@ -63,7 +63,7 @@ app.get('/weather', (req, res) => {
             }); //We use 'return' here as 'return' will stop the execution of the function there after console logging the error message
         }
 
-        forecast(latitude, longitude, (error, { description, currentTemperature, currentFeelsLike } = {}) => {
+        forecast(latitude, longitude, (error, { description, currentTemperature, currentFeelsLike, windSpeed, windDirection } = {}) => {
 
             if (error) {
                 return res.send({
@@ -76,7 +76,9 @@ app.get('/weather', (req, res) => {
                 location,
                 Description: description,
                 Temperature: currentTemperature,
-                Feels_Like: currentFeelsLike
+                FeelsLike: currentFeelsLike,
+                windSpeed,
+                windDirection
             });
 
         });

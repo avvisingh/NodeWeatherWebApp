@@ -21,7 +21,8 @@ weatherForm.addEventListener('submit', (e) => {
             } else {
                 console.log(data);
                 messageOne.textContent = data.location;
-                messageTwo.textContent = ('The current weather conditions are ' + data.Description + '. The current temperature is ' + data.Temperature + ' and it feels like ' + data.Feels_Like + '.');
+                messageTwo.textContent = ('The current weather conditions are ' + data.Description + '. The current temperature is ' + data.Temperature + ' and it feels like ' + data.FeelsLike + '.') +
+                    ('The current wind speed is ' + data.windSpeed + ' knots, blowing to the ' + data.windDirection + '.');
             }
         });
     });
